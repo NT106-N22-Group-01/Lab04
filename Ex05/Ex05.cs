@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
-using System.Runtime.InteropServices.JavaScript;
+using Newtonsoft.Json.Linq;
+
 
 namespace Ex05
 {
@@ -32,7 +33,7 @@ namespace Ex05
             Output.Clear();
             var email = usrText.Text;
             var password = pwdText.Text;
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password)
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Please fill out.", "Note:", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -51,7 +52,7 @@ namespace Ex05
                 if (response.IsSuccessStatusCode)
                 {
                     var responseContent = await response.Content.ReadAsStringAsync();
-                    dynamic json = JSObject.Parse(responseContent);
+                    dynamic json = JObject.Parse(responseContent);
                     var id = json.id;
                     var token = json.token;
                     Output.AppendText($"{id}\r\n{token}");
