@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Ex02\Ex02.csproj" />
     <ProjectReference Include="..\Ex04\Ex04.csproj" />
+    <ProjectReference Include="..\Ex05\Ex05.csproj" />
   </ItemGroup>
 
 </Project>

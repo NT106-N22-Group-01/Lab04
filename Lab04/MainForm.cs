@@ -1,5 +1,3 @@
-using Ex04;
-
 namespace Lab04
 {
 	public partial class MainForm : Form
@@ -24,9 +22,10 @@ namespace Lab04
 
 		private void buttonEx2_Click(object sender, EventArgs e)
 		{
-			/*this.Hide();
-			var Ex02 = new Lab03.Ex02.Ex02();
-			Ex02.Show();*/
+			this.Hide();
+			var Ex02 = new Ex02.Ex02();
+			Ex02.FormClosed += ShowMainForm;
+			Ex02.Show();
 		}
 
 		private void buttonEx3_Click(object sender, EventArgs e)
@@ -42,6 +41,14 @@ namespace Lab04
 			var Ex04 = new Ex04.Ex04();
 			Ex04.FormClosed += ShowMainForm;
 			Ex04.Show();
+		}
+
+		private void buttonEx5_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			var Ex05 = new Ex05.Ex05();
+			Ex05.FormClosed += ShowMainForm;
+			Ex05.Show();
 		}
 
 		private void buttonExit_Click(object sender, EventArgs e)

@@ -111,6 +111,7 @@
 			buttonEx5.TabIndex = 8;
 			buttonEx5.Text = "Bài 5";
 			buttonEx5.UseVisualStyleBackColor = true;
+			buttonEx5.Click += buttonEx5_Click;
 			// 
 			// MainForm
 			// 
