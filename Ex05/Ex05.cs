@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Net;
-using System.Runtime.InteropServices.JavaScript;
+﻿using System.Text.Json.Nodes;
 
 namespace Ex05
 {
@@ -32,8 +22,8 @@ namespace Ex05
             Output.Clear();
             var email = usrText.Text;
             var password = pwdText.Text;
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password)
-            {
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            { 
                 MessageBox.Show("Please fill out.", "Note:", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -51,10 +41,10 @@ namespace Ex05
                 if (response.IsSuccessStatusCode)
                 {
                     var responseContent = await response.Content.ReadAsStringAsync();
-                    dynamic json = JSObject.Parse(responseContent);
-                    var id = json.id;
-                    var token = json.token;
-                    Output.AppendText($"{id}\r\n{token}");
+                    var json = JsonObject.Parse(responseContent);
+                    var id = json?["id"].GetValue<int>();
+					var token = json?["token"].GetValue<string>();
+					Output.AppendText($"id: {id}\r\ntoken: {token}");
                    
                 }
                 else
