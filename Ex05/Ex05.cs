@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Nodes;
+using System.Text.Json.Nodes;
 
 namespace Ex05
 {
@@ -23,7 +23,7 @@ namespace Ex05
             var email = usrText.Text;
             var password = pwdText.Text;
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
-            { 
+            {
                 MessageBox.Show("Please fill out.", "Note:", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -44,8 +44,7 @@ namespace Ex05
                     var json = JsonObject.Parse(responseContent);
                     var id = json?["id"].GetValue<int>();
 					var token = json?["token"].GetValue<string>();
-					Output.AppendText($"id: {id}\r\ntoken: {token}");
-                   
+					Output.AppendText($"id: {id}\r\ntoken: {token}");          
                 }
                 else
                 {
