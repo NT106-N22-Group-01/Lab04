@@ -13,7 +13,7 @@ namespace Ex02
             pathText.ReadOnly = true;
         }
 
-        private void downloadButton_Click(object sender, EventArgs e)
+        private async void downloadButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(pathText.Text) || string.IsNullOrEmpty(urlText.Text))
             {
@@ -35,11 +35,13 @@ namespace Ex02
                         urlText.Text = urlText.Text.Insert(0, "http://");
                     }
 
-                    var client = new WebClient();
-                    var response = new StreamReader(client.OpenRead(urlText.Text));
-                    client.DownloadFile(urlText.Text, pathText.Text);
-                    Output.AppendText(response.ReadToEnd());
-                }
+					using (var client = new WebClient())
+					{
+						var response = new StreamReader(await client.OpenReadTaskAsync(urlText.Text));
+						await client.DownloadFileTaskAsync(urlText.Text, pathText.Text);
+						Output.AppendText(await response.ReadToEndAsync());
+					}
+				}
                 catch (Exception ex)
                 {
                     Output.AppendText(ex.ToString());
