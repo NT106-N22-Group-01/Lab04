@@ -127,7 +127,6 @@
 			Controls.Add(buttonEx1);
 			Name = "MainForm";
 			Text = "Lab 03";
-			Load += Form1_Load;
 			ResumeLayout(false);
 		}
 

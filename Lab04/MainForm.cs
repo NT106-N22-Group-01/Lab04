@@ -8,16 +8,12 @@ namespace Lab04
 			this.FormClosed += (sender, e) => Application.Exit();
 		}
 
-		private void Form1_Load(object sender, EventArgs e)
-		{
-
-		}
-
 		private void buttonEx01_Click(object sender, EventArgs e)
 		{
-			/*this.Hide();
-			var Ex01 = new task01();
-			Ex01.Show();*/
+			this.Hide();
+			var Ex01 = new Ex01.Ex01();
+			Ex01.FormClosed += ShowMainForm;
+			Ex01.Show();
 		}
 
 		private void buttonEx2_Click(object sender, EventArgs e)
