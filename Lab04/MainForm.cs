@@ -26,9 +26,10 @@ namespace Lab04
 
 		private void buttonEx3_Click(object sender, EventArgs e)
 		{
-			/*this.Hide();
-			var Ex03 = new Lab03.Ex03.Ex03();
-			Ex03.Show();*/
+			this.Hide();
+			var Ex03 = new Ex03.Ex03();
+			Ex03.FormClosed += ShowMainForm;
+			Ex03.Show();
 		}
 
 		private void buttonEx4_Click(object sender, EventArgs e)

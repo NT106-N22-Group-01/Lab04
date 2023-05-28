@@ -10,7 +10,6 @@ namespace Ex02
             Output.ReadOnly = true;
             Output.ScrollBars = ScrollBars.Both;
             pathText.Text = @".\index.html";
-            pathText.ReadOnly = true;
         }
 
         private async void downloadButton_Click(object sender, EventArgs e)

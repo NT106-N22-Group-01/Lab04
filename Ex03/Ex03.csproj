@@ -9,11 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ex01\Ex01.csproj" />
-    <ProjectReference Include="..\Ex02\Ex02.csproj" />
-    <ProjectReference Include="..\Ex03\Ex03.csproj" />
-    <ProjectReference Include="..\Ex04\Ex04.csproj" />
-    <ProjectReference Include="..\Ex05\Ex05.csproj" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1774.30" />
   </ItemGroup>
 
 </Project>
