@@ -48,6 +48,14 @@ namespace Lab04
 			Ex05.Show();
 		}
 
+		private void buttonEx6_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			var Ex06 = new Ex06.Ex06();
+			Ex06.FormClosed += ShowMainForm;
+			Ex06.Show();
+		}
+
 		private void buttonExit_Click(object sender, EventArgs e)
 		{
 			this.Close();
