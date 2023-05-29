@@ -28,18 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.wbNews = new System.Windows.Forms.WebBrowser();
             this.tbURL = new System.Windows.Forms.TextBox();
             this.btnGet = new System.Windows.Forms.Button();
+            this.flpNews = new System.Windows.Forms.FlowLayoutPanel();
+            this.progBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
-            // 
-            // wbNews
-            // 
-            this.wbNews.Location = new System.Drawing.Point(12, 40);
-            this.wbNews.MinimumSize = new System.Drawing.Size(20, 20);
-            this.wbNews.Name = "wbNews";
-            this.wbNews.Size = new System.Drawing.Size(776, 398);
-            this.wbNews.TabIndex = 0;
             // 
             // tbURL
             // 
@@ -58,14 +51,30 @@
             this.btnGet.UseVisualStyleBackColor = true;
             this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
             // 
+            // flpNews
+            // 
+            this.flpNews.AutoScroll = true;
+            this.flpNews.Location = new System.Drawing.Point(12, 81);
+            this.flpNews.Name = "flpNews";
+            this.flpNews.Size = new System.Drawing.Size(775, 357);
+            this.flpNews.TabIndex = 3;
+            // 
+            // progBar
+            // 
+            this.progBar.Location = new System.Drawing.Point(12, 46);
+            this.progBar.Name = "progBar";
+            this.progBar.Size = new System.Drawing.Size(774, 24);
+            this.progBar.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.progBar);
+            this.Controls.Add(this.flpNews);
             this.Controls.Add(this.btnGet);
             this.Controls.Add(this.tbURL);
-            this.Controls.Add(this.wbNews);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -74,10 +83,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.WebBrowser wbNews;
         private System.Windows.Forms.TextBox tbURL;
         private System.Windows.Forms.Button btnGet;
+        private System.Windows.Forms.FlowLayoutPanel flpNews;
+        private System.Windows.Forms.ProgressBar progBar;
     }
 }
 
